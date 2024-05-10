@@ -69,4 +69,9 @@ public class WelcomeActivity extends AppCompatActivity {
         Intent intent=new Intent(this,ReadActivity.class);
         startActivity(intent);
     }
+
+    public void delete(View view) {
+        Intent intent =new Intent(this,DeleteActivity.class);
+        startActivity(intent);
+    }
 }

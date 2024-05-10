@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/itemImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/kep" />
+
+        <TextView
+            android:id="@+id/itemTitle"
+            style="@style/ItemDetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/itemImage"
+            android:padding="8dp"
+            android:text="@string/c_m"
+            android:textColor="?android:textColorSecondary" />
+        <TextView
+            android:id="@+id/Details"
+            style="@style/ItemDetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/itemTitle"
+            android:padding="8dp"
+            android:text="@string/leiras" />
+
+        <TextView
+            android:id="@+id/letszam"
+            style="@style/ItemDetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Details"
+            android:padding="8dp"
+            android:layout_marginBottom="12dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/csapatok"
+            />
+
+        <TextView
+            android:id="@+id/helyszin"
+            style="@style/ItemDetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/letszam"
+            android:layout_marginBottom="12dp"
+            android:text="@string/helysz_n"
+            android:padding="8dp"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/datum"
+            style="@style/ItemDetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/helyszin"
+            android:layout_marginBottom="2dp"
+            android:text="@string/d_tum"
+            android:padding="8dp"
+            android:layout_centerHorizontal="true"/>
+        <Button
+            android:id="@+id/delete"
+            style="@style/ItemDetailText"
+            android:text="@string/torles"
+            android:layout_below="@id/datum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_centerHorizontal="true"
+
+            />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

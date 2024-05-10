@@ -18,13 +18,17 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import dalvik.system.DelegateLastClassLoader;
+
 public class SoccerItemAdapter extends RecyclerView.Adapter<SoccerItemAdapter.ViewHolder> implements Filterable {
     private ArrayList<SoccerItem> mSoccerItemsData;
     private ArrayList<SoccerItem> mSoccerItemDataAll;
+    private String name;
     private Context mContext;
     private int lastPosition=-1;
 
-    SoccerItemAdapter(Context context, ArrayList<SoccerItem> itemList) {
+    SoccerItemAdapter(Context context,String name, ArrayList<SoccerItem> itemList) {
+        this.name=name;
         this.mSoccerItemDataAll=itemList;
         this.mSoccerItemsData=itemList;
         this.mContext=context;
@@ -78,6 +82,7 @@ public class SoccerItemAdapter extends RecyclerView.Adapter<SoccerItemAdapter.Vi
              mItemImage=itemView.findViewById(R.id.itemImage);
              mTeamsText=itemView.findViewById(R.id.letszam);
              mDateText=itemView.findViewById(R.id.datum);
+
         }
 
         public void bindTo(SoccerItem currentItem) {
@@ -87,14 +92,21 @@ public class SoccerItemAdapter extends RecyclerView.Adapter<SoccerItemAdapter.Vi
             mTeamsText.setText(("Csapatok: "+currentItem.getTotalTeams()+"/"+currentItem.getCurrentTeams()));
             mDateText.setText(currentItem.getDate());
             Glide.with(mContext).load(currentItem.getImageResource()).into(mItemImage);
+
+            if(name.equals("Delete")){
+                itemView.findViewById(R.id.delete).setOnClickListener(view -> ((DeleteActivity)mContext).deleteItem(currentItem));
+            }
         }
     }
 
 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.list_item,parent,false));
-
+        if(name.equals("Delete")){
+            return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.list_item_delete,parent,false));
+        }else {
+            return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.list_item, parent, false));
+        }
     }
 
     @Override

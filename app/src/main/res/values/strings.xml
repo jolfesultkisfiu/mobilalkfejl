@@ -21,6 +21,7 @@
     <string name="helysz_n">Helyszín</string>
     <string name="d_tum">Dátum</string>
     <string name="keres_s">Keresés</string>
+    <string name="torles">Bajnokság törlése</string>
 
     <string-array name="soccer_tournament_names">
         <item>Premier Foci Liga</item>

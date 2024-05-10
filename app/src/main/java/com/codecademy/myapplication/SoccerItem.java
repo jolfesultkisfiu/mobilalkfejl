@@ -1,6 +1,7 @@
 package com.codecademy.myapplication;
 
 public class SoccerItem {
+    private String id;
     private String name;
     private String details;
     private String location;
@@ -44,6 +45,12 @@ public class SoccerItem {
 
     public int getImageResource() {
         return imageResource;
+    }
+    public String _getId(){
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
     }
 
     public SoccerItem(String name, String details, String location, int totalTeams, int currentTeams, String date, int imageResource) {
