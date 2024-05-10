@@ -74,4 +74,11 @@ public class WelcomeActivity extends AppCompatActivity {
         Intent intent =new Intent(this,DeleteActivity.class);
         startActivity(intent);
     }
+
+    public void update(View view) {
+
+    }
+
+    public void create(View view) {
+    }
 }
