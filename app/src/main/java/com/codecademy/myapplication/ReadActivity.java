@@ -17,7 +17,12 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
@@ -26,6 +31,10 @@ public class ReadActivity extends AppCompatActivity {
     private ArrayList<SoccerItem> itemList;
     private SoccerItemAdapter madapter;
     private boolean viewRow=true;
+
+    private FirebaseFirestore mFirestore;
+    private CollectionReference mItems;
+
 
     private int gridNumber=1;
     @Override
@@ -46,7 +55,26 @@ public class ReadActivity extends AppCompatActivity {
 
         mrecyclerView.setAdapter(madapter);
 
-        initializeData();
+        mFirestore=FirebaseFirestore.getInstance();
+        mItems=mFirestore.collection("Items");
+
+
+        queryData();
+
+    }
+    private void queryData(){
+        itemList.clear();
+        mItems.orderBy("soccerName").limit(10).get().addOnSuccessListener(queryDocumentSnapshots -> {
+            for(QueryDocumentSnapshot document:queryDocumentSnapshots){
+                SoccerItem item=document.toObject(SoccerItem.class);
+                itemList.add(item);
+            }
+            if(itemList.size()==0){
+                initializeData();
+                queryData();
+            }
+            madapter.notifyDataSetChanged();
+        });
     }
     private void initializeData(){
         String [] itemsNames=getResources().getStringArray(R.array.soccer_tournament_names);
@@ -56,14 +84,21 @@ public class ReadActivity extends AppCompatActivity {
         int []totalTeams={8,16,32};
         TypedArray itemImageResoruce=getResources().obtainTypedArray(R.array.soccer_item_img);
 
-        itemList.clear();
+
 
         for (int i = 0; i < itemsNames.length; i++) {
+
             int totoal=totalTeams[(int) Math.floor(Math.random()*3)];
-            itemList.add(new SoccerItem(itemsNames[i],itemdetails[i],itemLocation[i],totoal, (int) Math.floor(Math.random()*totoal),itemDates[i],itemImageResoruce.getResourceId(i,0)));
+            mItems.add(new SoccerItem(
+                    itemsNames[i],
+                    itemdetails[i],
+                    itemLocation[i],
+                    totoal, (int) Math.floor(Math.random()*totoal),
+                    itemDates[i],
+                    itemImageResoruce.getResourceId(i,0)));
         }
         itemImageResoruce.recycle();
-        madapter.notifyDataSetChanged();
+        //madapter.notifyDataSetChanged();
     }
 
     @Override

@@ -54,6 +54,14 @@ public class WelcomeActivity extends AppCompatActivity {
         if(user==null){
             Log.d(LOG_TAG,"Nem authentikált felhasználó!");
             finish();
+        }else{
+            Animation animation= AnimationUtils.loadAnimation(this,R.anim.slide_in_from_left);
+            Animation anim=AnimationUtils.loadAnimation(this,R.anim.slide_in_from_right);
+
+            findViewById(R.id.createButton).startAnimation(animation);
+            findViewById(R.id.deleteButton).startAnimation(anim);
+            findViewById(R.id.updateButton).startAnimation(animation);
+            findViewById(R.id.readButton).startAnimation(anim);
         }
     }
 
