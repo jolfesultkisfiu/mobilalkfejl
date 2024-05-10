@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "176660276956",
+    "project_id": "focibajnoksag-b8244",
+    "storage_bucket": "focibajnoksag-b8244.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176660276956:android:90d72788ec3a1411ac3619",
+        "android_client_info": {
+          "package_name": "com.codecademy.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABPcd4UHo7fW_32R6ICdWM6zChi6UEEKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">Focibajnokság információs alkalmazás</string>
+    <string name="name">Felhasználónév</string>
+    <string name="password">Jelszó</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="regisztracio">Regisztráció</string>
+    <string name="email">Email cím</string>
+    <string name="passwordConfirm">Jelszó megerősítése</string>
+    <string name="cancel">Mégse</string>
+    <string name="welcome">Üdv az alkalmazásban!</string>
+    <string name="create">Létrehozás</string>
+    <string name="delete">Törlés</string>
+    <string name="update">Módosítás</string>
+    <string name="read">Megtekintés</string>
+    <string name="guestlogin">Bejelentkezés vendégként</string>
+    <string name="title_activity_read">Bajnokságok megjelenítése</string>
+    <string name="c_m">Cím</string>
+    <string name="leiras">Leírás</string>
+    <string name="kep">Kép</string>
+    <string name="csapatok">Csapatok száma:</string>
+    <string name="helysz_n">Helyszín</string>
+    <string name="d_tum">Dátum</string>
+    <string name="keres_s">Keresés</string>
+
+    <string-array name="soccer_tournament_names">
+        <item>Premier Foci Liga</item>
+        <item>Arany Labda Kupa</item>
+        <item>Európai Foci Kupa</item>
+        <item>Nemzeti Bajnokság Kupa</item>
+        <item>Csillagok Bajnoksága</item>
+        <item>Világ Kupa Kihívás</item>
+        <item>Kék Sárga Liga</item>
+        <item>Zöld Pálya Bajnokság</item>
+        <item>Gyémánt Labda Kupa</item>
+        <item>Tóth István Emlékkupa</item>
+    </string-array>
+    <string-array name="soccer_item_desc">
+        <item>A Premier Foci Liga az egyik legnépszerűbb és legnagyobb presztízsű bajnokság a világon. A legjobb klubcsapatok versenyeznek egymással a bajnoki címért ebben a hatalmas futballcsatában.</item>
+        <item> Az Arany Labda Kupa egy rangos nemzetközi bajnokság, ahol a világ legjobb játékosai és klubjai mérik össze erejüket a dicsőségért és az Arany Labdáért.</item>
+        <item>Az Európai Foci Kupa az európai kontinens legnagyobb klubjainak bajnoksága. A legizgalmasabb mérkőzéseket láthatod itt, ahol a csapatok küzdenek a kontinentális dicsőségért.</item>
+        <item>A Nemzeti Bajnokság Kupa egy országos bajnokság, ahol a hazai csapatok rivalizálnak egymással a nemzeti bajnoki címért és a helyi büszkeségért.</item>
+        <item>A Csillagok Bajnoksága egy nagyszabású nemzetközi torna, ahol a világ különböző részeiről érkező csapatok mérkőznek meg egymással azért, hogy kiderüljön, ki a legfényesebb csillag a futball égboltján.</item>
+        <item>A Világ Kupa Kihívás egy izgalmas és kihívásokkal teli verseny, ahol a világ különböző országainak válogatottjai küzdenek egymással a világbajnoki címért.</item>
+        <item> A Kék Sárga Liga egy regionális bajnokság, ahol a kék és sárga színekbe öltözött csapatok csatáznak egymással azért, hogy elnyerjék a helyi elismerést és a bajnoki címet.</item>
+        <item> A Zöld Pálya Bajnokság egy környezetbarát futballtorna, ahol a fenntarthatóság és az ökológia fontos szerepet játszik. A zöld pályán játszó csapatok versenyeznek egymással a zöld címerért és a környezettudatos játékért.</item>
+        <item>A Gyémánt Labda Kupa egy exkluzív és luxus bajnokság, ahol a leggazdagabb klubok és játékosok mérik össze erejüket a gyémántokért és a kifinomult futballstílusért.</item>
+        <item>Hatalmas NB II. játekos 80. születésnapjára rendezett kupán mindenki megméredteti magát a SZVSE pályán.</item>
+    </string-array>
+    <array name="soccer_item_location">
+        <item>Szeged, SZVSE pálya</item>
+        <item>Szeged, Kisstadion</item>
+        <item>Szeged, Szent Gellért Fórum</item>
+        <item>Szeged, SZVSE pálya</item>
+        <item>Szeged, SZVSE pálya</item>
+        <item>Szeged, Szent Gellért Fórum</item>
+        <item>Szeged, Dzsinó sportpálya</item>
+        <item>Szeged, SZVSE pálya</item>
+        <item>Szeged, Dzsinó sportpálya</item>
+        <item>Szeged, Dózsa pálya</item>
+    </array>
+    <array name="soccer_item_datum">
+        <item>2024. március 15., 10:30</item>
+        <item>2024. július 28., 15:45</item>
+        <item>2024. november 5., 08:00</item>
+        <item>2024. április 10., 14:20</item>
+        <item>2025. szeptember 22., 11:55</item>
+        <item>2025. január 3., 09:10</item>
+        <item>2025. május 18., 16:30</item>
+        <item>2024. október 30., 13:15</item>
+        <item>2025. február 14., 12:40</item>
+        <item>2024. szeptember 24., 12:00</item>
+    </array>
+    <array name="soccer_item_img">
+        <item>@drawable/soccer2</item>
+        <item>@drawable/soccer</item>
+        <item>@drawable/soccer1</item>
+        <item>@drawable/soccer2</item>
+        <item>@drawable/soccer2</item>
+        <item>@drawable/soccer</item>
+        <item>@drawable/soccer1</item>
+        <item>@drawable/soccer</item>
+        <item>@drawable/soccer2</item>
+        <item>@drawable/soccer1</item>
+    </array>
+
+
+</resources>
