@@ -30,6 +30,7 @@ public class DeleteActivity extends AppCompatActivity {
     private boolean viewRow=true;
     private FirebaseFirestore mFirestore;
     private CollectionReference mItems;
+    private NotificationHelper mNotificationHelper;
 
 
     @SuppressLint("MissingInflatedId")
@@ -52,7 +53,7 @@ public class DeleteActivity extends AppCompatActivity {
         mrecyclerView.setAdapter(madapter);
         mFirestore= FirebaseFirestore.getInstance();
         mItems=mFirestore.collection("Items");
-
+        mNotificationHelper =new NotificationHelper(this);
 
         queryData();
     }
@@ -97,13 +98,17 @@ public class DeleteActivity extends AppCompatActivity {
     }
 
     public void deleteItem(SoccerItem item){
+
         DocumentReference ref=mItems.document(item._getId());
+
         ref.delete().addOnSuccessListener(success->{
             Log.d(LOG_TAG,"Sikeres törlés!"+item._getId());
+            queryData();
+            mNotificationHelper.send(item.getLocation()+" sikeresen torolve lett");
         })
                 .addOnFailureListener(failure->{
                     Toast.makeText(this,"Bajnokságot"+item._getId()+"Nem lehet törölni.",Toast.LENGTH_LONG).show();
                 });
-        queryData();
+
     }
 }
